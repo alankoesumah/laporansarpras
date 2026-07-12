@@ -19,14 +19,12 @@ import {
 // (Firebase Console -> Project settings -> Your apps -> Web app)
 // ============================================================
 const firebaseConfig = {
-
-  apiKey: "AIzaSyDGSdTk6BuBApFlDbi_zegcrdybWDrpc60",
-  authDomain: "sistem-informasi-sarpras.firebaseapp.com",
-  projectId: "sistem-informasi-sarpras",
-  storageBucket: "sistem-informasi-sarpras.firebasestorage.app",
-  messagingSenderId: "931421913431",
-  appId: "1:931421913431:web:707d82ad102a22433abe12",
-  measurementId: "G-VYX7C1Z2HW"
+  apiKey: "ISI_API_KEY",
+  authDomain: "ISI_PROJECT.firebaseapp.com",
+  projectId: "ISI_PROJECT_ID",
+  storageBucket: "ISI_PROJECT.appspot.com",
+  messagingSenderId: "ISI_SENDER_ID",
+  appId: "ISI_APP_ID",
 };
 
 // URL Google Apps Script Web App - untuk backup/mirror ke Google Sheet
@@ -35,8 +33,8 @@ const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwGQ30T8xaevo-
 // Cloudinary - untuk upload foto (gratis, tanpa kartu kredit)
 // Cloud Name: Dashboard Cloudinary > pojok kiri atas
 // Upload Preset: Settings > Upload > Upload presets (Signing Mode harus "Unsigned")
-const CLOUDINARY_CLOUD_NAME = "zuu5nwf1";
-const CLOUDINARY_UPLOAD_PRESET = "laporansarpras";
+const CLOUDINARY_CLOUD_NAME = "ISI_CLOUD_NAME";
+const CLOUDINARY_UPLOAD_PRESET = "ISI_UPLOAD_PRESET";
 
 const ADMIN_EMAILS = ['alankoesumah@gmail.com', 'sdnptunasglobaldepok@gmail.com'];
 
@@ -84,8 +82,8 @@ export default function App() {
   }, []);
 
   // ---- Database: dengarkan koleksi 'reports' secara realtime ----
-  // Setiap ada perubahan (dari guru manapun, di device manapun), state di sini
-  // otomatis ter-update tanpa perlu refresh manual.
+  // Baca & buat laporan terbuka untuk siapa saja (tidak perlu login).
+  // Hanya ubah status yang dibatasi untuk admin (dicek di sisi Rules & tombol cycleStatus).
   useEffect(() => {
     const q = query(collection(db, 'reports'), orderBy('id', 'asc'));
     const unsubscribe = onSnapshot(
