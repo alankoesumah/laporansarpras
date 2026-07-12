@@ -33,8 +33,8 @@ const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwGQ30T8xaevo-
 // Cloudinary - untuk upload foto (gratis, tanpa kartu kredit)
 // Cloud Name: Dashboard Cloudinary > pojok kiri atas
 // Upload Preset: Settings > Upload > Upload presets (Signing Mode harus "Unsigned")
-const CLOUDINARY_CLOUD_NAME = "ISI_CLOUD_NAME";
-const CLOUDINARY_UPLOAD_PRESET = "ISI_UPLOAD_PRESET";
+const CLOUDINARY_CLOUD_NAME = "zuu5nwf1";
+const CLOUDINARY_UPLOAD_PRESET = "laporansarpras";
 
 const ADMIN_EMAILS = ['alankoesumah@gmail.com', 'sdnptunasglobaldepok@gmail.com'];
 
