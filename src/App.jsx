@@ -15,7 +15,7 @@ import {
 } from 'firebase/firestore';
 
 // ============================================================
-// GANTI dengan firebaseConfig dari project Firebase Alan
+// Konfigurasi Firebase project "sistem-informasi-sarpras"
 // (Firebase Console -> Project settings -> Your apps -> Web app)
 // ============================================================
 const firebaseConfig = {
@@ -257,22 +257,22 @@ export default function App() {
         )}
       </header>
 
+      <div className="max-w-4xl mx-auto mb-4 flex gap-1.5">
+        {['kerusakan', 'pengajuan', 'progres'].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`flex-1 px-2 py-2.5 rounded-lg text-sm font-medium capitalize transition-colors ${
+              activeTab === tab ? 'bg-yellow-200 border border-yellow-300' : 'bg-white border border-pink-200 hover:bg-gray-100'
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
       <main className="max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-lg border border-pink-100">
         {dbError && <div className="mb-4 text-sm text-red-600 font-medium">{dbError}</div>}
-
-        <div className="flex gap-3 mb-6 overflow-x-auto pb-2">
-          {['kerusakan', 'pengajuan', 'progres'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 rounded-full font-medium capitalize ${
-                activeTab === tab ? 'bg-yellow-200 border border-yellow-300' : 'bg-white border border-pink-200 hover:bg-gray-100'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
 
         {activeTab === 'kerusakan' && (
           <div className="space-y-6">
