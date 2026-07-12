@@ -19,12 +19,12 @@ import {
 // (Firebase Console -> Project settings -> Your apps -> Web app)
 // ============================================================
 const firebaseConfig = {
-  apiKey: "ISI_API_KEY",
-  authDomain: "ISI_PROJECT.firebaseapp.com",
-  projectId: "ISI_PROJECT_ID",
-  storageBucket: "ISI_PROJECT.appspot.com",
-  messagingSenderId: "ISI_SENDER_ID",
-  appId: "ISI_APP_ID",
+  apiKey: "AIzaSyDGSdTk6BuBApFlDbi_zegcrdybWDrpc60",
+  authDomain: "sistem-informasi-sarpras.firebaseapp.com",
+  projectId: "sistem-informasi-sarpras",
+  storageBucket: "sistem-informasi-sarpras.firebasestorage.app",
+  messagingSenderId: "931421913431",
+  appId: "1:931421913431:web:707d82ad102a22433abe12",
 };
 
 // URL Google Apps Script Web App - untuk backup/mirror ke Google Sheet
